@@ -6,16 +6,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
-
-enum	e_side
+enum	e_wall
 {
-	S_NO,
-	S_SO,
-	S_WE,
-	S_EA,
-	S_COUNT,
+	W_NORTH,
+	W_SOUTH,
+	W_WEST,
+	W_EAST,
+	W_COUNT,
 };
 
 typedef union u_color
@@ -40,7 +37,7 @@ typedef struct s_screen
 	void		*mlx;
 	void		*window;
 	t_img		img;
-	t_img		walls[S_COUNT];
+	t_img		walls[W_COUNT];
 }	t_screen;
 
 
@@ -49,4 +46,5 @@ void	load_hooks(t_screen *screen);
 int	render(t_screen *screen);
 int	background(t_img *img, int color);
 void	pixel_put(t_img *img, int x, int y, int color);
+int	pixel_get(t_img *img, int x, int y);
 int	exit_raycast(t_screen *screen);

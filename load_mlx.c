@@ -1,7 +1,7 @@
 #include "raycast.h"
 #include <string.h>
 
-static char *walls_xpm_files[S_COUNT] = {
+static char *walls_xpm_files[W_COUNT] = {
 	"assets/no.xpm",
 	"assets/so.xpm",
 	"assets/we.xpm",
@@ -47,9 +47,9 @@ t_screen	load_mlx(int width, int height)
 			&screen.img.bpp,
 			&screen.img.line_len,
 			&screen.img.endian);
-	load_wall_sprite(&screen, S_NO);
-	load_wall_sprite(&screen, S_SO);
-	load_wall_sprite(&screen, S_WE);
-	load_wall_sprite(&screen, S_EA);
+	load_wall_sprite(&screen, W_NORTH);
+	load_wall_sprite(&screen, W_SOUTH);
+	load_wall_sprite(&screen, W_WEST);
+	load_wall_sprite(&screen, W_EAST);
 	return (screen);
 }

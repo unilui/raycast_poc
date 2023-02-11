@@ -4,7 +4,7 @@ OBJS		=	${SRCS:%.c=$(OBJS_DIR)%.o}
 OBJS_DIR	=	objects/
 NAME		=	raycast
 CC			=	cc
-CFLAGS 	= -O0 -g3
+CFLAGS	= -O0 -g3
 LIBS		=	-lmlx -lX11 -lXext -lm
 RM			=	rm -rf
 

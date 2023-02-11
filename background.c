@@ -14,6 +14,14 @@ void	pixel_put(t_img *img, int x, int y, int color)
 	*pixel = color;
 }
 
+int	pixel_get(t_img *img, int x, int y)
+{
+	char	*px;
+
+	px = img->addr + y * img->line_len + (x * (img->bpp / 8));
+	return (*(unsigned int *)px);
+}
+
 int	background(t_img *img, int color)
 {
 	int	x;
